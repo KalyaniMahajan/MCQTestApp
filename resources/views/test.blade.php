@@ -10,7 +10,7 @@
 
                         <span style="float: right;">
                              Time left : &nbsp;
-                            <div id="display" style="float: right;"> 30 mins : 00 secs</div>
+                            <div id="display" style="float: right;"> 20 mins : 00 secs</div>
                             <div id="submitted" style="float: right;"></div>
                         </span>
                     </div>
@@ -103,7 +103,7 @@
         //window.location.href = "{{url('/online-test/completed')}}";
     }
 
-    CountDown(1800,$('#display'));
+    CountDown(1200,$('#display'));
 </script>
 @stop
   

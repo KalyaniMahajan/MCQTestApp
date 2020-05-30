@@ -5,10 +5,10 @@
 </head>
 <body>
 		<h4>Dear {{ $emailBody }},</h4>
-		Greeting from OnclaveSystems!<br>
-		We thank you for your interest in applying for the role with us.<br>
-		As a valued candidate of our Recruitment Process, we would like to invite you to participate in a quick survey about your experience with us. Your feedback is important to us.<br><br>
-		<a href='https://www.google.com'>Click here</a> to start the survey.<br><br><br>
+		Greetings from Onclave Systems!<br>
+		<P>We are sharing your interview link in this email. This link will expire on Sunday, 31st May at 23:59 HRS. Please note, once you start the test, you will not be able to retake the test again. Once this is completed, a member from our team will get in touch with you regarding further process.</P>
+		<br><br>
+		<a href='https://www.google.com'>Click here</a> to start the test.<br><br><br>
 		Thanks.<br>
 		HR Team<br>
 		Onclave Systems.

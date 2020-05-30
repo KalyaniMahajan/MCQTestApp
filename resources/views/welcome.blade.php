@@ -9,7 +9,7 @@
                     <b>You can take the test only once.</b>
 
                     <span style="float: right;">Number of questions : 20  |  
-                    Time left : &nbsp; 30 minutes
+                    Time left : &nbsp; 20 minutes
                 </div>
 
                 <div class="card-body">
@@ -23,13 +23,13 @@
                             <h4><b><u>General Instructions: </u></b></h4> Please read the below instructions carefully while appearing for the online test here.
 
                             <ul>
-                            <li>Total number of questions 20. Total of 30 minutes duration will be given to attempt all 20 questions.</li>
-                            <li>The clock has been set at the server and countdown timer displayed at the top of the question numer pattern will update you on remaining time to complete the exam. When the clock reached to 0 the exam will automatically close and it will display the report page where you can find all the correct and wrong question along with total marks.</li>
-                            <li>The question number box at the right side of the screen represents one of the below status. Initially it is in black color when starting of the exam. Red color indicates not attempted or skipped questions; Black color indicates not visited questions. Green color indicates attempted questions.</li>
-                            <li>All twenty (20) questions are multiple choices. You can navigate to any question by clicking the question number at the right side. It will navigate to respective question. By clicking next option you can see upcoming question. If you want to see answer for any question instance click on view answer at the same way click solution for explanation.</li>
-                            <li>The weight age for each question is 1(one) mark. Penalty for wrong answer is 0.25. No negative marks for skipped questions or un attempted questions. To complete the test click on END TEST button. Do not refresh the page while writing the exam. For any assist please contact admin by dropping a mail which is available at contact us page. All the best. Keep visiting our website for new updates</li>
-                            Thanks.
-                            </ul>
+                            <li>The test consists of 30 MCQ questions. You will have 20 minutes to answer all 30 questions. </li>
+                            <li>Please note that attempting a minimum of 22 questions is required to qualify for the next round.</li>
+                            <li>Once you start the test, you will not be able to retake it again.</li>
+                            <li>This is the 1st phase of a 4 phase interview round.</li>
+                            <li>This test link is valid till Sunday, 31st May 2020, 23:59 HRS.</li>
+                            </ul><br>
+                            <h6>All The Best!</h6>
                         </div>
                         <hr>
                         <form action="{{ route('online-test') }}" method="POST">
