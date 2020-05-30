@@ -37,9 +37,15 @@ class QuestionsController extends Controller
      */
     public function getQuestions()
     {
+        $getUser = User::find(Session::get('userId'));
+        if ($getUser->is_submitted == 1) {
+            Session::forget('userId');
+            return abort(404);
+        }
+        $updateUserData = User::where('id', Session::get('userId'))->update(['url_token'=> '']);
        	$questions_options = Question::with('options')->get();
         //dd($questions_options);
-        return view('test', compact('questions_options'));
+        return view('test', compact('questions_options', 'getUser'));
     }
 
     public function submitTest(Request $request)
@@ -62,7 +68,7 @@ class QuestionsController extends Controller
 	    }
 
     	/*Update user test result */
-    	$updateUserData = User::where('id', Session::get('userId'))->update(['total_attempts'=>$attemptCount, 'total_score'=>count($getCorrectAnsOfQue)]);
+    	$updateUserData = User::where('id', Session::get('userId'))->update(['total_attempts'=>$attemptCount, 'total_score'=>count($getCorrectAnsOfQue), 'is_submitted' => 1]);
     	$getUser = User::find(Session::get('userId'));
 
     	return view('test-result', compact('getCorrectAnsOfQue', 'getUser'));

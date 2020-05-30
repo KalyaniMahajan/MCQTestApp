@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
+use DB;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
 
@@ -39,10 +41,18 @@ class UserTestLinkCommand extends Command
      */
     public function handle()
     {
+        $dt = Carbon::now();
+        $starttime = $dt->toDateTimeString();
+        $endtime = Carbon::Create('2020-05-31 23:59:00')->toDateTimeString();
+        $updateTimes = DB::table('users')->update(['url_token_active'=>$starttime, 'url_token_expired'=>$endtime]);
+
+
         $users = User::all();
         foreach ($users as $user) {
-            $emailBody = $user->name;
-            $emailContent = array('emailBody' => $emailBody);
+            $name = $user->name;
+            $id = $user->id;
+            $url = 'https://www.google.com/'.$id;
+            $emailContent = array('name' => $name, 'url' => $url);
 
             Mail::send(['html' => 'emails.testemail_template'], $emailContent, function ($mail) use ($user) {
                 $mail->from('kalyani.mahajan@onclavesystems.com');

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('url_token_expired')->nullable();
             $table->integer('total_attempts')->nullable()->default(0);
             $table->integer('total_score')->nullable()->default(0);
+            $table->boolean('is_submitted')->default(0);
             $table->timestamps();
         });
     }
