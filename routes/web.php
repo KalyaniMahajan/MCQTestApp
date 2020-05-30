@@ -17,3 +17,5 @@ Route::get('/{id}', 'QuestionsController@index');
 Route::post('/online-test', 'QuestionsController@getQuestions')->name('online-test');
 Route::post('/online-test/submitted', 'QuestionsController@submitTest');
 Route::get('/online-test/completed', 'QuestionsController@completedTest');
+
+Route::get('/{id}', 'TestController@index');
