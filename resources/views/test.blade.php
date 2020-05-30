@@ -15,7 +15,7 @@
                         </span>
                     </div>
 
-                    <form action="{{ url('/online-test/submitted') }}" id="quizfrm" method="POST">
+                    <form action="{{ route('test.submit', Request::segment(2)) }}" id="quizfrm" method="POST">
                         @csrf
                         @if(isset($questions_options))
                         <div class="card-body">

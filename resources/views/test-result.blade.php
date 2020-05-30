@@ -10,14 +10,14 @@
                     </div>
 
                     <div class="card-body">
-                        <h5>Dear, {{ucwords($getUser->name)}}  Thank You for the test..!</h5>
+                        <h5>Dear, {{ucwords($submitUser->name)}}  Thank You for the test..!</h5>
                         Total Number Of Questions : &nbsp; &nbsp; &nbsp; 20
                         <hr>
-                        Number Of Attempted Questions  : &nbsp; &nbsp; &nbsp; @if(isset($getUser->total_attempts)) {{ $getUser->total_attempts }} @endif
+                        Number Of Attempted Questions  : &nbsp; &nbsp; &nbsp; @if(isset($submitUser->total_attempts)) {{ $submitUser->total_attempts }} @endif
                         <hr> 
-                        Your Score  &nbsp; : &nbsp; &nbsp; &nbsp; @if(isset($getUser->total_score)) {{ $getUser->total_score }} @endif
+                        Your Score  &nbsp; : &nbsp; &nbsp; &nbsp; @if(isset($submitUser->total_score)) {{ $submitUser->total_score }} @endif
                     <br/><br/>
-                        <a class="btn btn-primary" style="float: right;" href="{{ url('/online-test/completed') }}">Done</a>
+                        {{-- <button class="btn btn-primary" style="float: right;" onclick="window.close()">Close This Window</button> --}}
                     </div>
                     </div>
                 </div>

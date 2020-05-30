@@ -41,11 +41,14 @@ class UserTestLinkCommand extends Command
     {
         $users = User::all();
         foreach ($users as $user) {
-            $emailBody = $user->name;
-            $emailContent = array('emailBody' => $emailBody);
+            $name = $user->name;
+            $link = substr(md5(rand()), 0, 10);
+            $user->update(array('url_token'=>$link));
+
+            $emailContent = array('name' => $name, 'link'=> $link);
 
             Mail::send(['html' => 'emails.testemail_template'], $emailContent, function ($mail) use ($user) {
-                $mail->from('kalyani.mahajan@onclavesystems.com');
+                $mail->from('no-reply@onclavesystems.com');
                 $mail->to($user->email)
                     ->subject('MCQ Test');
             });
