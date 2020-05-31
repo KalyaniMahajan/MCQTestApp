@@ -11,7 +11,7 @@
 
                     <div class="card-body">
                         <h5>Dear, {{ucwords($submitUser->name)}}  Thank You for the test..!</h5>
-                        Total Number Of Questions : &nbsp; &nbsp; &nbsp; 20
+                        Total Number Of Questions : &nbsp; &nbsp; &nbsp; 30
                         <hr>
                         Number Of Attempted Questions  : &nbsp; &nbsp; &nbsp; @if(isset($submitUser->total_attempts)) {{ $submitUser->total_attempts }} @endif
                         <hr> 

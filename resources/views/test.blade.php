@@ -3,24 +3,24 @@
 @section('content') 
 <div class="container">
     <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <b>Number of questions : 30</b>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <b>Number of questions : 30</b>
 
-                        <span style="float: right;">
-                             Time left : &nbsp;
-                            <div id="display" style="float: right;"> 20 mins : 00 secs</div>
-                            <div id="submitted" style="float: right;"></div>
-                        </span>
-                    </div>
+                    <span style="float: right;">
+                         Time left : &nbsp;
+                        <div id="display" style="float: right;"> 20 mins : 00 secs</div>
+                        <div id="submitted" style="float: right;"></div>
+                    </span>
+                </div>
 
-                    <form action="{{ route('test.submit', Request::segment(2)) }}" id="quizfrm" method="POST">
-                        @csrf
-                        @if(isset($questions_options))
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
+                <form action="{{ route('test.submit', Request::segment(2)) }}" id="quizfrm" method="POST">
+                    @csrf
+                    @if(isset($questions_options))
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
                                 @php $i = 1; @endphp
                                 @if(count($questions_options) > 0)
                                     @foreach($questions_options as $que) 
@@ -42,22 +42,17 @@
                                             <br>
                                             @endforeach
                                         </div>
-                                        @php $i++ @endphp
-                                        @endforeach
-                                    @endif
                                     </div>
+                                    @php $i++ @endphp
+                                    @endforeach
+                                    @endif
 
-                                    <button class="btn btn-primary" type="submit">Sabmit</button>
-                                </div>
-                            @endif
-                        </form>
-                    @else 
-                        <br><hr>
-                        <h4 style="text-align: center;color: red;">This link is not valid...!</h4>
+                                <button class="btn btn-primary" type="submit">Sabmit</button>
+                            </div>
+                        </div>
+                    </div>
                     @endif
-                    </div>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -65,6 +60,7 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
+    
     function disable_f5(e)
     {
       if ((e.which || e.keyCode) == 116)
