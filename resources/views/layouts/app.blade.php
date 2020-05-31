@@ -25,7 +25,7 @@
         <div class="">
             <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #e9ecef !important;padding: 0.2rem 1rem;">
                 <span class="navbar-brand">
-                    <img src="images/logo.png" style="width: 172px; height: 55px;">
+                    <img src="{{asset('images/logo.png')}}" style="width: 172px; height: 55px;">
                 </span>
             </nav>
             <br/><br/>

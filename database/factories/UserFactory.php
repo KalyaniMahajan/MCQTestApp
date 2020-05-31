@@ -21,12 +21,12 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
 	$dt = Carbon::now();
 	$starttime = $dt->toDateTimeString();
-	$endtime = $dt->addHour(2);
+	$endtime = $dt->addHour(12);
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'url_token' => Str::random(32),
-        'url_token_active' => $starttime,
-        'url_token_expired' => $endtime,
+        'started_at' => $starttime,
+        'submitted_at' => $endtime,
     ];
 });

@@ -15,34 +15,32 @@
                         </span>
                     </div>
 
-                    <div class="card-body">
-                    @if($getUser->is_submitted == 0)
-                        <form action="{{ url('/online-test/submitted') }}" id="quizfrm" method="POST">
-                            @csrf
-                            @if(isset($questions_options))
-                                <div class="container">
-                                    <div class="row">
-                                    @php $i = 1; @endphp
-                                    @if(count($questions_options) > 0)
-                                        @foreach($questions_options as $que) 
-                                        <div class="col col-md-12 questions-row">
-                                            <strong>Q. #{{$i}} : &nbsp; &nbsp;</strong>
-                                            <span>
-                                                {{$que->question_text}}
-                                            </span>
-                                        </div>
-                                        <div class="w-100"></div>
-                                        <div class="col col-md-12">
-                                            <div class="form-group">
-                                                @foreach($que->options as $ptn)
-                                                <br>
-                                                    <div class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" class="custom-control-input" id="{{$ptn->id}}" name="answers[{{$ptn->question_id}}]" value="{{$ptn->id}}">
-                                                        <label class="custom-control-label" for="{{$ptn->id}}">&nbsp; {{$ptn->option}}</label>
-                                                    </div>
-                                                <br>
-                                                @endforeach
-                                            </div>
+                    <form action="{{ route('test.submit', Request::segment(2)) }}" id="quizfrm" method="POST">
+                        @csrf
+                        @if(isset($questions_options))
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                @php $i = 1; @endphp
+                                @if(count($questions_options) > 0)
+                                    @foreach($questions_options as $que) 
+                                    <div class="col col-md-12 questions-row">
+                                        <strong>Q. #{{$i}} : &nbsp; &nbsp;</strong>
+                                        <span>
+                                            {{$que->question_text}}
+                                        </span>
+                                    </div>
+                                    <div class="w-100"></div>
+                                    <div class="col col-md-12">
+                                        <div class="form-group">
+                                            @foreach($que->options as $ptn)
+                                            <br>
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" class="custom-control-input" id="{{$ptn->id}}" name="answers[{{$ptn->question_id}}]" value="{{$ptn->id}}">
+                                                    <label class="custom-control-label" for="{{$ptn->id}}">&nbsp; {{$ptn->option}}</label>
+                                                </div>
+                                            <br>
+                                            @endforeach
                                         </div>
                                         @php $i++ @endphp
                                         @endforeach

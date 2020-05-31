@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('url_token')->nullable();
-            $table->timestamp('url_token_active')->nullable();
-            $table->timestamp('url_token_expired')->nullable();
+            $table->timestamp('started_at')->nullable();
+            $table->timestamp('submitted_at')->nullable();
             $table->integer('total_attempts')->nullable()->default(0);
             $table->integer('total_score')->nullable()->default(0);
             $table->boolean('is_submitted')->default(0);
